@@ -1,0 +1,14 @@
+after cloning the project, reopen the folder in remote container during set up make sure to choose go and postgresSQl 
+after opening in container;
+
+create go mod file with the command go mod init myapp, there amy be little changes you might
+have to do in import statement.
+
+install gorilla/mix and lib/pq 
+with go get -u github.com/gorilla/mux and got get -u github.com/lib/pq
+
+install the postgres extention and postman extension in the devcontainer.
+after that setup database server in postgreSQL, note that if you do not selected go and 
+postgreSQL during devcontainer set up it will not work here.
+
+After that run => go run main.go and test the apis you are good to go
