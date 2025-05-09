@@ -23,3 +23,17 @@ function login(){
         }
     })
 }
+
+function logout() {
+    fetch('/logout')
+    .then(response => {
+    if (response.ok) {
+    window.open("index.html", "_self")
+    } else {
+    throw new Error(response.statusText)
+    }
+    }).catch (e => {
+    alert(e)
+    })
+    }
+    

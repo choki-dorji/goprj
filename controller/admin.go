@@ -5,6 +5,7 @@ import (
 	"myapp/myapp/model"
 	"myapp/myapp/utils/httpResp"
 	"net/http"
+	"time"
 )
 
 func Signup(w http.ResponseWriter, r *http.Request) {
@@ -36,5 +37,22 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		httpResp.RespondWithError(w, http.StatusBadRequest, getErr.Error())
 		return
 	}
+
+	cookie := http.Cookie{
+		Name:    "my-name",
+		Value:   "my-value",
+		Expires: time.Now().Add(24 * time.Hour),
+		Secure:  true,
+	}
+	http.SetCookie(w, &cookie)
+
 	httpResp.RespondWithJSON(w, http.StatusCreated, map[string]string{"message": "success"})
+}
+
+func Logout(w http.ResponseWriter, r *http.Request) {
+	http.SetCookie(w, &http.Cookie{
+		Name:    "my-name",
+		Expires: time.Now(),
+	})
+	httpResp.RespondWithJSON(w, http.StatusOK, map[string]string{"message": "logged out"})
 }

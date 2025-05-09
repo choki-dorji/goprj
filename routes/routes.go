@@ -21,6 +21,7 @@ func InitializeRoutes() {
 	//admin
 	router.HandleFunc("/signup", contolller.Signup).Methods("POST")
 	router.HandleFunc("/login", contolller.Login).Methods("POST")
+	router.HandleFunc("/logout", contolller.Logout)
 
 	//serving static files
 	fhandler := http.FileServer(http.Dir("./view"))

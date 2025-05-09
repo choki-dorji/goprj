@@ -2,6 +2,7 @@
 
 function addStudent() {
     var data = getFormData()
+    console.log("daata", data)
     var sid = data.stdid;
     if (isNaN(sid)) {
         alert("Enter valid student ID");
