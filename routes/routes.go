@@ -18,6 +18,19 @@ func InitializeRoutes() {
 	router.HandleFunc("/student/{sid}", contolller.UpdateStud).Methods("PUT")
 	router.HandleFunc("/student/{sid}", contolller.DeleteUser).Methods("DELETE")
 
+	router.HandleFunc("/enroll", contolller.Enroll).Methods("POST")
+	router.HandleFunc("/enrolls", contolller.GetAllEnrolls).Methods("GET")
+	router.HandleFunc("/enroll/{sid}/{cid}", contolller.GetEnroll).Methods("GET")
+	router.HandleFunc("/enroll/{sid}/{cid}", contolller.DeleteEnroll).Methods("DELETE")
+	router.HandleFunc("/enroll/{sid}", contolller.UpdateEnroll).Methods("PUT")
+
+	//course
+	router.HandleFunc("/course", contolller.AddCourse).Methods("POST")
+	router.HandleFunc("/courses", contolller.GetCourses).Methods("GET")
+	router.HandleFunc("/course/{cid}", contolller.GetCourse).Methods("GET")
+	router.HandleFunc("/course/{cid}", contolller.UpdateCourse).Methods("PUT")
+	router.HandleFunc("/course/{cid}", contolller.DeleteCourse).Methods("DELETE")
+
 	//admin
 	router.HandleFunc("/signup", contolller.Signup).Methods("POST")
 	router.HandleFunc("/login", contolller.Login).Methods("POST")
