@@ -1,75 +1,69 @@
 body {
+    background-color: #f0f2f5;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.login-box, .signup-box {
+    width: 360px;
+    margin: 60px auto;
+    padding: 30px;
     background-color: #ffffff;
-    font-family: "Roboto", sans-serif;
-  }
-  
-  .signup-box {
-    width: 360px;
-    height: 500px;
-    margin: auto;
-    background-color:rgb(169, 169, 178);
-    border-radius: 3px;
-  }
-  
-  .login-box {
-    width: 360px;
-    height: 280px;
-    margin: auto;
-    border-radius: 3px;
-    background-color: rgb(169, 169, 178);
-  }
-  
-  h1 {
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
     text-align: center;
-    padding-top: 15px;
-  }
-  
-  h4 {
-    text-align: center;
-  }
-  
-  form {
-    width: 300px;
-    margin-left: 20px;
-  }
-  
-  form label {
-    display: flex;
-    margin-top: 20px;
-    font-size: 18px;
-  }
-  
-  form input {
+    margin-bottom: 20px;
+    color: #10174f;
+}
+
+form {
     width: 100%;
-    padding: 7px;
-    border: none;
-    border: 1px solid gray;
-    border-radius: 6px;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+form input:focus {
+    border-color: #10174f;
     outline: none;
-  }
-  input[type="button"] {
-    width: 100px;
-    height: 35px;
+}
+
+input[type="button"] {
+    width: 100%;
     margin-top: 20px;
-    margin-left: 100px;
-    border: none;
-    background-color: rgb(10, 10, 69);
+    padding: 10px;
+    background-color: #10174f;
     color: white;
-    font-size: 18px;
-  }
-  p {
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+input[type="button"]:hover {
+    background-color: #2d357b;
+}
+
+.para-2 {
     text-align: center;
-    padding-top: 20px;
-    font-size: 15px;
-  }
-  .para-2 {
-    text-align: center;
-    color: #000000;
-    font-size: 15px;
-    margin-top: -10px;
-  }
-  .para-2 a {
-    color: #000000;
-  }
-  
-  
+    margin-top: 20px;
+    color: #666;
+}
+.para-2 a {
+    color: #10174f;
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -18,19 +18,21 @@ function showCourse(data) {
 }
 
 function newRow(course) {
-    var table = document.getElementById("myTable");
-    var row = table.insertRow(table.length);
-    var td = [];
+    const table = document.getElementById("myTable").getElementsByTagName("tbody")[0];
+    const row = table.insertRow();
 
-    for (let i = 0; i < table.rows[0].cells.length; i++) {
-        td[i] = row.insertCell(i);
-    }
-
-    td[0].innerHTML = course.cid;
-    td[1].innerHTML = course.coursename;
-    td[2].innerHTML = '<input type="button" onclick="deleteCourse(this)" value="delete">';
-    td[3].innerHTML = '<input type="button" onclick="updateCourse(this)" value="edit">';
+    row.innerHTML = `
+      <td class="px-6 py-4 whitespace-nowrap">${course.cid}</td>
+      <td class="px-6 py-4 whitespace-nowrap">${course.coursename}</td>
+      <td class="px-6 py-4 text-center">
+        <button onclick="updateCourse(this)" class="text-blue-600 hover:text-blue-800 font-medium underline">Edit</button>
+      </td>
+      <td class="px-6 py-4 text-center">
+        <button onclick="deleteCourse(this)" class="text-gray-500 hover:text-red-600 font-medium">Delete</button>
+      </td>
+    `;
 }
+
 
 function addCourse() {
     let data = getFormData();
@@ -98,6 +100,7 @@ function update() {
 
 function showCourses(data) {
     const courses = JSON.parse(data);
+    console.log("course ", courses);
     courses.forEach(course => newRow(course));
 }
 
