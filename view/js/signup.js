@@ -19,7 +19,7 @@ function signUp() {
     })
     .then(response => {
         if (response.status == 201) {
-           window.open("/login.html", "_self");
+           window.open("/index.html", "_self");
         }
     })
 }

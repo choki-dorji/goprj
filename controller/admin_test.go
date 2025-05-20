@@ -2,6 +2,7 @@ package contolller
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"net/http"
 	"testing"
@@ -56,4 +57,19 @@ func TestAddUserNotExist(t *testing.T) {
 
 	assert.Equal(t, 400, res.StatusCode)
 	assert.Contains(t, string(body), "no rows in result set")
+}
+
+func TestRegister(t *testing.T) {
+	url := "http://localhost:8080/signup"
+	data := []byte(`{"email":"ceedeejjj9@gmail.com", "password":"pass", "firstname": "dorji", "lastname": "khandu"}`)
+
+	req, _ := http.NewRequest("POST", url, bytes.NewBuffer(data))
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	res, _ := client.Do(req)
+	body, _ := io.ReadAll(res.Body)
+	fmt.Println("response:", string(body))
+	defer res.Body.Close()
+	assert.Equal(t, 201, res.StatusCode)
 }
