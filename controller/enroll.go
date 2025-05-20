@@ -3,9 +3,10 @@ package contolller
 import (
 	"encoding/json"
 	"fmt"
-	"myapp/myapp/model"
-	"myapp/myapp/utils/date"
-	"myapp/myapp/utils/httpResp"
+	"myapp/model"
+	"myapp/utils/date"
+	"myapp/utils/httpResp"
+
 	"strconv"
 
 	"net/http"

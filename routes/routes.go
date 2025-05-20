@@ -2,7 +2,7 @@ package routes
 
 import (
 	"log"
-	contolller "myapp/myapp/controller"
+	contolller "myapp/controller"
 	"net/http"
 
 	"github.com/gorilla/mux"

@@ -1,8 +1,6 @@
 package main
 
-import (
-	"myapp/myapp/routes"
-)
+import "myapp/routes"
 
 func main() {
 	routes.InitializeRoutes()

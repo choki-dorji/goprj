@@ -1,8 +1,6 @@
 package model
 
-import (
-	"myapp/myapp/datastore/postgres"
-)
+import "myapp/datastore/postgres"
 
 type Admin struct {
 	FirstName string

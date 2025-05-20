@@ -2,8 +2,8 @@ package contolller
 
 import (
 	"encoding/json"
-	"myapp/myapp/model"
-	"myapp/myapp/utils/httpResp"
+	"myapp/model"
+	"myapp/utils/httpResp"
 
 	"net/http"
 

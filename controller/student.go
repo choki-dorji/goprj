@@ -3,8 +3,9 @@ package contolller
 import (
 	"database/sql"
 	"encoding/json"
-	"myapp/myapp/model"
-	"myapp/myapp/utils/httpResp"
+	"myapp/model"
+	"myapp/utils/httpResp"
+
 	"net/http"
 	"strconv"
 

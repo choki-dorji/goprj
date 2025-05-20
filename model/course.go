@@ -1,6 +1,6 @@
 package model
 
-import "myapp/myapp/datastore/postgres"
+import "myapp/datastore/postgres"
 
 type Course struct {
 	Cid        string `json:"cid"`
